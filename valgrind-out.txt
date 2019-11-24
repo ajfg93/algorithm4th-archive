@@ -1,0 +1,189 @@
+==19264== Memcheck, a memory error detector
+==19264== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==19264== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==19264== Command: ./a.out
+==19264== Parent PID: 19263
+==19264== 
+--19264-- 
+--19264-- Valgrind options:
+--19264--    --leak-check=full
+--19264--    --show-leak-kinds=all
+--19264--    --track-origins=yes
+--19264--    --verbose
+--19264--    --log-file=valgrind-out.txt
+--19264-- Contents of /proc/version:
+--19264--   Linux version 4.15.0-43-generic (buildd@lgw01-amd64-001) (gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)) #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
+--19264-- 
+--19264-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--19264-- Page sizes: currently 4096, max supported 4096
+--19264-- Valgrind library directory: /usr/lib/valgrind
+--19264-- Reading syms from /home/tianhe/Desktop/learn/a.out
+--19264-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--19264--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--19264--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--19264--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--19264--   .. CRC is valid
+--19264-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--19264--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--19264--   .. CRC mismatch (computed c25f395c wanted 0a9602a8)
+--19264--    object doesn't have a symbol table
+--19264--    object doesn't have a dynamic symbol table
+--19264-- Scheduler: using generic scheduler lock implementation.
+--19264-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==19264== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-19264-by-tianhe-on-???
+==19264== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-19264-by-tianhe-on-???
+==19264== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-19264-by-tianhe-on-???
+==19264== 
+==19264== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==19264== don't want to do, unless you know exactly what you're doing,
+==19264== or are doing some strange experiment):
+==19264==   /usr/lib/valgrind/../../bin/vgdb --pid=19264 ...command...
+==19264== 
+==19264== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==19264==   /path/to/gdb ./a.out
+==19264== and then give GDB the following command
+==19264==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=19264
+==19264== --pid is optional if only one valgrind process is running
+==19264== 
+--19264-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x58060901 (???)
+--19264-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x5806091b (???)
+--19264-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--19264--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--19264--   .. CRC mismatch (computed 4b63d83e wanted 670599e6)
+--19264--    object doesn't have a symbol table
+--19264-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--19264--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--19264--   .. CRC mismatch (computed a4b37bee wanted 8ad4dc94)
+--19264--    object doesn't have a symbol table
+==19264== WARNING: new redirection conflicts with existing -- ignoring it
+--19264--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x58060901 ???
+--19264--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--19264-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--19264-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--19264-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--19264--    object doesn't have a symbol table
+--19264-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--19264--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--19264--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--19264--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--19264--   .. CRC is valid
+--19264-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--19264--    object doesn't have a symbol table
+--19264-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--19264--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--19264--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--19264--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--19264--   .. CRC is valid
+--19264-- REDIR: 0x5819c70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818d40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819f50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818d70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x581b7c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819de0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819c10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818d00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819d40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x58370f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818ca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819fa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x581a0e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818da0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x58187c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5818c70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x58236c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819ff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819be0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5837eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819f20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x5819ef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x581b7f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x581a040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--19264-- REDIR: 0x59093c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--19264-- REDIR: 0x5812070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--19264-- REDIR: 0x5909590 (libc.so.6:__strlen_avx2) redirected to 0x4c32cf0 (strlen)
+--19264-- REDIR: 0x5905ba0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c35e00 (bcmp)
+--19264-- REDIR: 0x58e4d60 (libc.so.6:__strcmp_ssse3) redirected to 0x4c33da0 (strcmp)
+--19264-- REDIR: 0x5909ad0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c366e0 (memmove)
+--19264-- REDIR: 0x5819590 (libc.so.6:__GI_strstr) redirected to 0x4c37760 (__strstr_sse2)
+--19264-- REDIR: 0x4ecf190 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c30110 (operator new(unsigned long))
+--19264-- REDIR: 0x5909ab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+==19264== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==19264== 
+==19264== Process terminating with default action of signal 11 (SIGSEGV)
+==19264==  Access not within mapped region at address 0x1FFE801FF8
+==19264== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==19264==    at 0x401596: ythlearn::Linkedlist<int>::merge_sort(ythlearn::Linkedlist<int>::Node*) (singlelinkedlist.h:73)
+==19264==  If you believe this happened as a result of a stack
+==19264==  overflow in your program's main thread (unlikely but
+==19264==  possible), you can try to increase the size of the
+==19264==  main thread stack using the --main-stacksize= flag.
+==19264==  The main thread stack size used in this run was 8388608.
+==19264== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==19264== 
+==19264== Process terminating with default action of signal 11 (SIGSEGV)
+==19264==  Access not within mapped region at address 0x1FFE801FF0
+==19264== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==19264==    at 0x4A2A650: _vgnU_freeres (in /usr/lib/valgrind/vgpreload_core-amd64-linux.so)
+==19264==  If you believe this happened as a result of a stack
+==19264==  overflow in your program's main thread (unlikely but
+==19264==  possible), you can try to increase the size of the
+==19264==  main thread stack using the --main-stacksize= flag.
+==19264==  The main thread stack size used in this run was 8388608.
+==19264== 
+==19264== HEAP SUMMARY:
+==19264==     in use at exit: 74,344 bytes in 7 blocks
+==19264==   total heap usage: 7 allocs, 0 frees, 74,344 bytes allocated
+==19264== 
+==19264== Searching for pointers to 7 not-freed blocks
+==19264== Checked 6,823,496 bytes
+==19264== 
+==19264== 64 bytes in 4 blocks are still reachable in loss record 1 of 4
+==19264==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19264==    by 0x4014F5: ythlearn::Linkedlist<int>::push_left(int) (singlelinkedlist.h:49)
+==19264==    by 0x401126: ythlearn::Linkedlist<int>::Linkedlist(std::initializer_list<int>) (singlelinkedlist.h:26)
+==19264==    by 0x400F26: main (main.cpp:31)
+==19264== 
+==19264== 552 bytes in 1 blocks are still reachable in loss record 2 of 4
+==19264==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19264==    by 0x57F9E49: __fopen_internal (iofopen.c:65)
+==19264==    by 0x57F9E49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==19264==    by 0x4EF8833: std::random_device::_M_init(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==19264==    by 0x400FFC: std::random_device::random_device(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (random.h:1573)
+==19264==    by 0x400D10: __cxx_global_var_init.1 (main.cpp:10)
+==19264==    by 0x400DED: _GLOBAL__sub_I_main.cpp (main.cpp:0)
+==19264==    by 0x4017BC: __libc_csu_init (in /home/tianhe/Desktop/learn/a.out)
+==19264==    by 0x579CB27: (below main) (libc-start.c:266)
+==19264== 
+==19264== 1,024 bytes in 1 blocks are still reachable in loss record 3 of 4
+==19264==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19264==    by 0x57F918B: _IO_file_doallocate (filedoalloc.c:101)
+==19264==    by 0x5809378: _IO_doallocbuf (genops.c:365)
+==19264==    by 0x5808497: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+==19264==    by 0x58069EC: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+==19264==    by 0x57FA976: fwrite (iofwrite.c:39)
+==19264==    by 0x4F440D1: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==19264==    by 0x4F50384: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==19264==    by 0x401187: ythlearn::Linkedlist<int>::print() (singlelinkedlist.h:60)
+==19264==    by 0x400F2F: main (main.cpp:32)
+==19264== 
+==19264== 72,704 bytes in 1 blocks are still reachable in loss record 4 of 4
+==19264==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19264==    by 0x4ECB375: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==19264==    by 0x4010732: call_init (dl-init.c:72)
+==19264==    by 0x4010732: _dl_init (dl-init.c:119)
+==19264==    by 0x40010C9: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+==19264== 
+==19264== LEAK SUMMARY:
+==19264==    definitely lost: 0 bytes in 0 blocks
+==19264==    indirectly lost: 0 bytes in 0 blocks
+==19264==      possibly lost: 0 bytes in 0 blocks
+==19264==    still reachable: 74,344 bytes in 7 blocks
+==19264==         suppressed: 0 bytes in 0 blocks
+==19264== 
+==19264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==19264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
